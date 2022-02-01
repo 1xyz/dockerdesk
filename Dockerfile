@@ -1,4 +1,4 @@
-FROM golang:1.15.3-alpine3.12 as build
+FROM golang:1.16-alpine as build
 
 # Install the Protocol Buffers compiler and Go plugin
 RUN apk add protobuf git make zip
@@ -13,7 +13,6 @@ WORKDIR /go/plugin
 COPY . /go/plugin
 
 # Build the plugin
-RUN chmod +x ./print_arch
 RUN make all
 
 # Create the zipped binaries
