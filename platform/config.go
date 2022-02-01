@@ -60,6 +60,9 @@ type PlatformConfig struct {
 	// - Example: 3000:3001/tcp, 8080:80
 	// See: https://docs.docker.com/config/containers/container-networking/#published-ports
 	PublishedPorts string `hcl:"published_ports,optional"`
+
+	// Set the container name to the app name
+	UseAppAsContainerName bool `hcl:"use_app_as_container_name,optional"`
 }
 
 type ClientConfig struct {

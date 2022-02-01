@@ -322,6 +322,9 @@ func (p *Platform) resourceContainerCreate(
 
 	// Create the container
 	name := src.App + "-" + result.Id
+	if p.config.UseAppAsContainerName {
+		name = src.App
+	}
 	cr, err := cli.ContainerCreate(ctx, &cfg, &hostconfig, &netconfig, nil, name)
 	if err != nil {
 		return status.Errorf(codes.Internal, "unable to create Docker container: %s", err)
