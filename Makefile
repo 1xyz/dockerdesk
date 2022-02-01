@@ -7,17 +7,7 @@ endif
 
 .PHONY: all
 
-all: protos build
-
-# Generate the Go code from Protocol Buffer definitions
-protos:
-	@echo ""
-	@echo "Build Protos"
-
-	protoc -I . --go_out=plugins=grpc:. --go_opt=paths=source_relative ./builder/output.proto
-#	protoc -I . --go_out=plugins=grpc:. --go_opt=paths=source_relative ./registry/output.proto
-#	protoc -I . --go_out=plugins=grpc:. --go_opt=paths=source_relative ./platform/output.proto
-#	protoc -I . --go_out=plugins=grpc:. --go_opt=paths=source_relative ./release/output.proto
+all: build
 
 # Builds the plugin on your local machine
 build:
