@@ -4,6 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"os"
+	"path/filepath"
+	"strconv"
+	"strings"
+	"time"
+
 	"github.com/docker/distribution/reference"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
@@ -23,11 +29,6 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/timestamppb"
-	"os"
-	"path/filepath"
-	"strconv"
-	"strings"
-	"time"
 )
 
 const (
@@ -293,7 +294,9 @@ func (p *Platform) resourceContainerCreate(
 	// created.
 	netconfig := network.NetworkingConfig{
 		EndpointsConfig: map[string]*network.EndpointSettings{
-			netState.Name: {},
+			netState.Name: {
+				Aliases: []string{src.App},
+			},
 		},
 	}
 
