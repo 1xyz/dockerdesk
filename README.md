@@ -1,6 +1,12 @@
 # dockerdesk 
 
-Docker desktop waypoint plugin (platform/deploy)
+Experimental Docker desktop waypoint plugin (platform/deploy plugin)
+
+## Notes
+
+- The docker desktop plugin is a fork from waypoint's [builtin docker plugin](https://pkg.go.dev/github.com/hashicorp/waypoint/builtin/docker).
+- Ability to pin ports and container names, much like docker-compose.
+- Why? The plugin gives the flexibility to expose the services I am building right from the desktop within my team.
 
 ## Build
 ```shell
@@ -14,7 +20,7 @@ In your project, ensure
 * `export XDG_CONFIG_HOME=$HOME/.config/waypoint`
 * Here is an example `waypoint.hcl` where the `dockerdesk` plugin is used
 
-```json
+```
 app "frontend" {
     path = "./frontend"
     build {
@@ -32,4 +38,6 @@ app "frontend" {
 }
 ```
 
-For a working example see [here](https://github.com/aardlabs/nginx-gohttp-dev/blob/main/waypoint.hcl)
+## Resources
+* How to a write plugin [here](https://www.waypointproject.io/docs/extending-waypoint/creating-plugins)
+* For a working example see [here](https://github.com/aardlabs/nginx-gohttp-dev/blob/main/waypoint.hcl)
