@@ -47,4 +47,4 @@ app "frontend" {
 
 ## Resources
 * How to a write plugin [here](https://www.waypointproject.io/docs/extending-waypoint/creating-plugins)
-* For a working example see [here](./examples/example_waypoint.hcl)
+* For a working example see [here](./_examples/example_waypoint.hcl)
