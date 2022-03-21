@@ -10,8 +10,15 @@ Experimental Docker desktop waypoint plugin (platform/deploy plugin)
 
 ## Build
 ```shell
-make && make install
+make
 ```
+
+## Install
+```shell
+$ export XDG_CONFIG_HOME=$HOME/.config/waypoint
+$ make install
+```
+
 ## Example use within a project
 
 In your project, ensure

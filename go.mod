@@ -1,4 +1,4 @@
-module github.com/aardlabs/dockerdesk
+module github.com/1xyz/dockerdesk
 
 go 1.16
 

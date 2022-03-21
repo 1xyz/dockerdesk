@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/aardlabs/dockerdesk/platform"
+	"github.com/1xyz/dockerdesk/platform"
 	sdk "github.com/hashicorp/waypoint-plugin-sdk"
 )
 
